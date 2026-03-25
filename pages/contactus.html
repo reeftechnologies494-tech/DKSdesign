@@ -24,6 +24,10 @@
 <meta name="geo.placename" content="New Delhi">
 <meta name="geo.position" content="28.6219;77.0878"> <meta name="ICBM" 
 content="28.6219, 77.0878">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon.png">
 
     <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon.png">
@@ -159,5 +163,27 @@ content="28.6219, 77.0878">
       </footer>
     </div>
     <script src="../js/script.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js"></script>
+  <script>
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true,
+      lerp: 0.05,
+      getSpeed: true,
+      getDirection: true,
+      smoothTouch: false,
+      touchMultiplier: 2,
+      smartphone: {
+        smooth: true,
+        breakpoint: 768,
+        lerp: 0.08,
+      },
+      tablet: {
+        smooth: true,
+        breakpoint: 1024,
+        lerp: 0.06,
+      },
+    });
+  </script>
 </body>
 </html>
