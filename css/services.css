@@ -1,0 +1,32 @@
+/* Services Page Styles */
+.text-gold {
+  color: var(--accent-gold);
+}
+
+.service-learn-btn {
+  padding: 0.8rem 1.5rem;
+  align-self: flex-start;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.services-intro-section {
+  padding: 4rem 5%;
+  background: var(--bg-color);
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.services-intro-section h2 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  font-family: var(--font-heading);
+  margin-bottom: 1rem;
+}
+
+.services-intro-section p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 1.1rem;
+}

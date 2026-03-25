@@ -1,6 +1,6 @@
 :root {
   --bg-color: #ffffff;
-  --text-color: #1a1a1a;
+  --text-color: #494545;
   --text-muted: #666666;
   --accent-gold: #00bfaf;
   --accent-red: #ff4d4d;
@@ -72,12 +72,10 @@ body {
 .grid-line {
   width: 1px;
   height: 100%;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(0, 191, 175, 0.15),
-    transparent
-  );
+  background: linear-gradient(to bottom,
+      transparent,
+      rgba(0, 191, 175, 0.15),
+      transparent);
 }
 
 /* Animated gradient overlay */
@@ -87,17 +85,16 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(0, 191, 175, 0.07) 0%,
-    transparent 50%
-  );
+  background: radial-gradient(circle at 50% 50%,
+      rgba(0, 191, 175, 0.07) 0%,
+      transparent 50%);
   pointer-events: none;
   z-index: 1;
   animation: pulse 8s ease-in-out infinite;
 }
 
 @keyframes pulse {
+
   0%,
   100% {
     opacity: 0.3;
@@ -200,7 +197,7 @@ body {
 
 .nav-links {
   display: flex;
-  justify-items: center;   
+  justify-items: center;
   align-items: center;
   gap: 2.5rem;
 }
@@ -290,11 +287,9 @@ body {
   gap: 4rem;
   padding: 0;
   position: relative;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 191, 175, 0.06) 0%,
-    rgba(255, 255, 255, 0) 60%
-  );
+  background: linear-gradient(135deg,
+      rgba(0, 191, 175, 0.06) 0%,
+      rgba(255, 255, 255, 0) 60%);
 }
 
 .hero-content {
@@ -464,6 +459,7 @@ body {
 }
 
 @keyframes floatBadge {
+
   0%,
   100% {
     transform: translateY(0);
@@ -480,6 +476,7 @@ body {
 }
 
 @keyframes floatBadgeCenter {
+
   0%,
   100% {
     transform: translateX(-50%) translateY(0);
@@ -522,6 +519,7 @@ body {
 }
 
 @keyframes pulse {
+
   0%,
   100% {
     opacity: 1;
@@ -546,7 +544,7 @@ body {
 
 .hero-title span {
   display: block;
-  background: linear-gradient(135deg, #000000, var(--accent-gold));
+  background: linear-gradient(125deg, #00000095, var(--accent-gold));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -713,12 +711,10 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent);
   transition: left 0.6s ease;
   z-index: 2;
 }
@@ -918,12 +914,10 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(0, 191, 175, 0.1),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(0, 191, 175, 0.1),
+      transparent);
   transition: left 0.6s ease;
 }
 
@@ -970,11 +964,9 @@ body {
 .card-content {
   padding: 2rem;
   position: relative;
-  background: linear-gradient(
-    to top,
-    rgba(255, 255, 255, 0.95),
-    rgba(255, 255, 255, 0.7)
-  );
+  background: linear-gradient(to top,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.7));
 }
 
 .card-content h3 {
@@ -1200,11 +1192,9 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
   margin-top: 5rem;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 191, 175, 0.05) 0%,
-    rgba(255, 255, 255, 0) 70%
-  );
+  background: linear-gradient(135deg,
+      rgba(0, 191, 175, 0.05) 0%,
+      rgba(255, 255, 255, 0) 70%);
   border-radius: 16px;
 }
 
@@ -1331,6 +1321,7 @@ body {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+
   .design-section,
   .cta-footer,
   .projects-grid {
@@ -1539,10 +1530,11 @@ body {
   gap: 2rem;
 }
 
-.split-img-primary, .split-img-secondary {
+.split-img-primary,
+.split-img-secondary {
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
 }
 
 .split-img-primary {
@@ -1555,7 +1547,8 @@ body {
   transform: translateY(3rem);
 }
 
-.split-img-primary img, .split-img-secondary img {
+.split-img-primary img,
+.split-img-secondary img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1577,8 +1570,8 @@ body {
   border-radius: 8px;
   padding: 2.5rem;
   transition: all 0.4s ease;
-  border: 1px solid rgba(0,0,0,0.03);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -1586,7 +1579,7 @@ body {
 
 .minimalist-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
   border-color: rgba(0, 191, 175, 0.1);
 }
 
@@ -1640,7 +1633,7 @@ body {
   background: #ffffff;
   padding: 4rem;
   border-radius: 8px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
 }
 
 .contact-form-minimalist h2 {
