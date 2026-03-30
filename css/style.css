@@ -108,7 +108,7 @@ body {
 .content {
   position: relative;
   z-index: 5;
-  max-width: 1400px;
+  max-width: auto;
   margin: 0 auto;
   padding: 0 5%;
 }
@@ -271,12 +271,38 @@ body {
 /* Mobile Menu Toggle */
 .mobile-toggle {
   display: none;
-  background: none;
-  border: none;
+  background: #ffffff;
+  border: 1px solid rgba(0, 191, 175, 0.2);
   color: var(--text-color);
-  font-size: 1.5rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.2rem;
   cursor: pointer;
   z-index: 101;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-toggle i {
+  transition: transform 0.4s ease;
+}
+
+.mobile-toggle:hover {
+  background: var(--accent-gold);
+  color: #ffffff;
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 191, 175, 0.25);
+}
+
+.mobile-toggle.active {
+  background: var(--text-color);
+  color: #ffffff;
+  border-color: var(--text-color);
+  transform: rotate(90deg);
 }
 
 /* Hero Section Enhanced */
@@ -571,29 +597,48 @@ body {
   gap: 1.5rem;
   background: linear-gradient(135deg, #0d2321, #009e90);
   color: #ffffff;
-  padding: 1.2rem 3rem;
+  /* Set a consistent padding so the button size stays the same */
+  padding: 1.2rem 4.5rem 1.2rem 3rem; 
   font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1px;
-  transition: all 0.4s ease;
+  transition: var(--transition-smooth); /* Use your existing smooth transition */
   position: relative;
   border: none;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .explore-btn:hover {
-  padding-right: 4rem;
+  /* Instead of changing padding, we use transform or shadow */
   box-shadow: 0 20px 40px rgba(0, 191, 175, 0.35);
+  transform: translateY(-2px);
 }
 
 .explore-btn svg {
   width: 1.2rem;
   height: 1.2rem;
   position: absolute;
+  /* Position it relative to the right edge */
   right: 1.8rem;
-  transition: all 0.4s ease;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.explore-btn:hover svg {
+  /* Move the arrow slightly to the right */
+  transform: translateX(5px);
+}
+
+/* Optional: If you want the text to slide left to make room */
+.explore-btn span {
+  display: inline-block;
+  transition: transform 0.4s ease;
+}
+
+.explore-btn:hover span {
+  transform: translateX(-5px);
 }
 
 .explore-btn:hover svg {
@@ -786,7 +831,6 @@ body {
 }
 
 .team-redirect:hover {
-  background: #fff;
   transform: scale(1.1) rotate(90deg);
 }
 
@@ -1187,8 +1231,10 @@ body {
 .cta-footer {
   border-top: 1px solid rgba(0, 191, 175, 0.2);
   padding: 8rem 5%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 5rem;
   margin-top: 5rem;
   background: linear-gradient(135deg,
@@ -1249,9 +1295,6 @@ body {
   width: 20px;
 }
 
-.social-side {
-  position: relative;
-}
 
 .social-grid {
   display: grid;
@@ -1308,6 +1351,11 @@ body {
   border-color: var(--accent-gold);
   transform: scale(1.1) rotate(5deg);
 }
+.social-grid-smallDevice{
+  display: flex;
+  height: 10vh;
+  gap: 1rem;
+}
 
 .copyright {
   text-align: right;
@@ -1320,13 +1368,10 @@ body {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-
-  .design-section,
-  .cta-footer,
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 4rem;
-  }
+  
+.social-side {
+  display: none;
+}
 
   .expertise-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1345,13 +1390,20 @@ body {
   }
 }
 
+@media screen and (min-width:1024){
+  .social-grid-smallDevice{
+    display: none;
+  }
+  
+}
 @media (max-width: 768px) {
   .navbar {
     padding: 1rem 5%;
   }
+  
 
   .mobile-toggle {
-    display: block;
+    display: flex;
   }
 
   .nav-right {

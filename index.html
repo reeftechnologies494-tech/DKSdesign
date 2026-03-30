@@ -92,11 +92,12 @@
 
         <p class="hero-description">
           DKS Design delivers technically accurate BIM models, coordinated
-          MEPF systems, and construction-ready documentation engineered for
+          MEPF systems, and construction-ready engineered for
           real-world execution.
         </p>
 
-        <a href="#projects" class="explore-btn" title="Explore Our Signature Projects Portfolio">
+        <a href="#projects" id="explore_our_projects" class="explore-btn"
+          title="Explore Our Signature Projects Portfolio">
           VIEW OUR PROJECTS
           <svg viewBox="0 0 24 24" fill="none">
             <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -143,7 +144,7 @@
 
       <div class="heritage-block">
         <div class="team-image-container" data-scroll data-scroll-speed="0.2">
-          <a href="#" class="team-redirect" title="Explore Our Vision">
+          <a href="#learnMore" class="team-redirect" title="Explore Our Vision">
             <i class="fas fa-arrow-right"></i>
           </a>
           <img src="img/ser/about.jpeg" alt="Technical Precision" />
@@ -165,17 +166,11 @@
 
           <div class="stat-badges">
             <div class="stat-item">
-              <span class="num"><span class="counter" data-target="12">12</span>+</span>
+              <span class="num"><span class="counter" data-target="25">25</span>+</span>
               <span class="label">Years of Engineering<br />Excellence</span>
             </div>
-
             <div class="stat-item">
-              <span class="num"><span class="counter" data-target="250">250</span>+</span>
-              <span class="label">Coordinated<br />Projects</span>
-            </div>
-
-            <div class="stat-item">
-              <span class="num"><span class="counter" data-target="5">5</span>M+</span>
+              <span class="num"><span class="counter" data-target="5">8</span>M+</span>
               <span class="label">Sq. Ft.<br />Modeled</span>
             </div>
           </div>
@@ -286,14 +281,15 @@
               space planning, material selection, and 3D concepts to enhance
               aesthetics and usability.
             </p>
-            <a href="#contact" class="service-btn" title="Learn more about our Interior Design Services">Learn More</a>
+            <a href="#contact" class="service-btn" id="learnMore"
+              title="Learn more about our Interior Design Services">Learn More</a>
           </div>
         </div>
       </div>
     </section>
     <!-- Signature Projects -->
     <section id="projects">
-      <div class="section-header">
+      <div id="signatureProducts" class="section-header">
         <h2 class="section-title">SIGNATURE PROJECTS</h2>
         <span class="section-subtitle">Our Impact</span>
       </div>
@@ -301,7 +297,7 @@
       <div class="slider-viewport">
         <div class="slider-track" id="sliderTrack">
           <!-- Project 1 -->
-          <div class="project-slide" data-scroll data-scroll-speed="0.2">
+          <div class="project-slide">
             <img src="./img/blog/1.png" alt="Corporate Office" />
             <div class="slide-info">
               <span class="project-tag">Commercial — Delhi NCR</span>
@@ -311,7 +307,7 @@
           </div>
 
           <!-- Project 2 -->
-          <div class="project-slide" data-scroll data-scroll-speed="0.4">
+          <div class="project-slide">
             <img src="./img/blog/2.png" alt="Luxury Villa" />
             <div class="slide-info">
               <span class="project-tag">Residential — Gurugram</span>
@@ -321,7 +317,7 @@
           </div>
 
           <!-- Project 3 -->
-          <div class="project-slide" data-scroll data-scroll-speed="0.3">
+          <div class="project-slide">
             <img src="./img/blog/3.png" alt="Healthcare" />
             <div class="slide-info">
               <span class="project-tag">Healthcare — India</span>
@@ -331,7 +327,7 @@
           </div>
 
           <!-- Project 4 -->
-          <div class="project-slide" data-scroll data-scroll-speed="0.2">
+          <div class="project-slide">
             <img src="./img/ser/mall.png" alt="Retail Mall" />
             <div class="slide-info">
               <span class="project-tag">Retail — Mumbai</span>
@@ -366,19 +362,22 @@
         </h2>
         <div class="contact-info">
           <strong>DKS Design</strong>
-          <span><i class="fas fa-map-marker-alt"></i> Janakpuri, New Delhi –
-            110058, India</span>
+          <span><i class="fas fa-map-marker-alt"></i> C4B Janakpuri, New Delhi, 110058
+
+          </span>
           <span><i class="fas fa-phone"></i> +91 9810464942</span>
           <span><i class="fas fa-envelope"></i> dks@dksdesign.in</span>
         </div>
       </div>
       <div class="social-side">
         <div class="social-grid">
-          <a href="https://wa.me/919810464942" class="social-box" target="_blank" title="Contact us on WhatsApp"><i
+          <a href="https://wa.me/+919810464942" class="social-box" target="_blank" title="Contact us on WhatsApp"><i
               class="fab fa-whatsapp"></i></a>
-          <a href="#" class="social-box" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-box" title="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-box" title="Connect with us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="" class="social-box" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61575144633559&rdid=4PmdZ5U7T6iF0Ujh&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AgqiyiV8U%2F#"
+            class="social-box" title="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/dksdesign.in" class="social-box" title="Connect with us on LinkedIn"><i
+              class="fab fa-linkedin-in"></i></a>
         </div>
         <div class="copyright">© 2024 DKS Design. All Rights Reserved.</div>
       </div>
@@ -387,6 +386,28 @@
 
   <!-- Three.js animation (Enhanced) -->
   <script src="js/script.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js"></script>
+  <script>
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true,
+      lerp: 0.05,
+      getSpeed: true,
+      getDirection: true,
+      smoothTouch: false,
+      touchMultiplier: 2,
+      smartphone: {
+        smooth: true,
+        breakpoint: 768,
+        lerp: 0.08,
+      },
+      tablet: {
+        smooth: true,
+        breakpoint: 1024,
+        lerp: 0.06,
+      },
+    });
+  </script>
 </body>
 
 </html>

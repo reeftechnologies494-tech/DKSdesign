@@ -1,3 +1,54 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navRight = document.getElementById('navRight');
+    
+    if (menuToggle && navRight) {
+        menuToggle.addEventListener('click', () => {
+            navRight.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            // Toggle FontAwesome icon between bars and times
+            const icon = menuToggle.querySelector('i');
+            if(icon) {
+                if (navRight.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menuToggle.contains(e.target) && !navRight.contains(e.target) && navRight.classList.contains('active')) {
+                navRight.classList.remove('active');
+                menuToggle.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                if(icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+        });
+
+        // Close menu when clicking a link
+        const navLinks = navRight.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navRight.classList.remove('active');
+                menuToggle.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                if(icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    }
+});
+
         (function () {
             const track = document.getElementById('sliderTrack');
             const dots = document.querySelectorAll('.dot-btn');
