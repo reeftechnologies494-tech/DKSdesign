@@ -48,49 +48,129 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+(function () {
+    const images = [
+      "../assets/3dVis.jpeg",
+      "../assets/3dVis2.jpg", 
+      "../assets/3dvVis3.jpg"
+    ];
 
-        (function () {
-            const track = document.getElementById('sliderTrack');
-            const dots = document.querySelectorAll('.dot-btn');
-            const btnPrev = document.getElementById('slidePrev');
-            const btnNext = document.getElementById('slideNext');
-            const viewport = document.querySelector('.slider-viewport');
+    let i = 0;
+    const imgEl = document.getElementById('hero-image');
 
-            const total = dots.length;
-            let current = 0;
-            let autoTimer;
+    // 2. The function that swaps the source
+    function swap() {
+      i = (i + 1) % images.length; // Cycles: 0, 1, 2, 0, 1...
+      imgEl.src = images[i];
+    }
 
-            /* ---- core move ---- */
-            function goTo(idx) {
-                current = (idx + total) % total;          // wrap-around safe
-                track.style.transform = `translateX(-${current * 100}%)`;
-                dots.forEach((d, i) =>
-                    d.classList.toggle('active', i === current));
-            }
+    // 3. Start the timer (2000ms = 2 seconds)
+    setInterval(swap, 2000);
+  }()
+)
+    document.addEventListener("DOMContentLoaded", () => {
+  const images = [
+    "../assets/3dVis.jpeg",
+    "../assets/3dVis2.jpeg",
+    "../assets/3dVis3.jpeg" // fixed typo
+  ];
 
-            /* ---- controls ---- */
-            btnPrev.addEventListener('click', () => { resetAuto(); goTo(current - 1); });
-            btnNext.addEventListener('click', () => { resetAuto(); goTo(current + 1); });
-            dots.forEach(d =>
-                d.addEventListener('click', () => { resetAuto(); goTo(+d.dataset.index); }));
+  let i = 0;
+  const imgEl = document.getElementById("hero-image");
 
-            /* ---- auto-play (pause on hover) ---- */
-            function startAuto() {
-                autoTimer = setInterval(() => goTo(current + 1), 5000);
-            }
-            function resetAuto() {
-                clearInterval(autoTimer);
-                startAuto();
-            }
-            viewport.addEventListener('mouseenter', () => clearInterval(autoTimer));
-            viewport.addEventListener('mouseleave', startAuto);
-            startAuto();
+  if (!imgEl) return; // safety check
 
-            /* ---- touch / swipe support ---- */
-            let touchStartX = 0;
-            viewport.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-            viewport.addEventListener('touchend', e => {
-                const dx = e.changedTouches[0].clientX - touchStartX;
-                if (Math.abs(dx) > 40) { resetAuto(); goTo(dx < 0 ? current + 1 : current - 1); }
-            }, { passive: true });
-        })();
+  // set initial image
+  imgEl.src = images[i];
+
+  function swap() {
+    i = (i + 1) % images.length;
+    imgEl.src = images[i];
+  }
+
+  setInterval(swap, 2000);
+});
+(function () {
+    const images = [
+      "../img/expertise_card/constructionDocMain.png",
+      "../img/expertise_card/constructionDoc.png",
+    ];
+
+    let i = 0;
+    const imgEl = document.getElementById('hero-Image1');
+
+    // 2. The function that swaps the source
+    function swap() {
+      i = (i + 1) % images.length; // Cycles: 0, 1, 2, 0, 1...
+      imgEl.src = images[i];
+    }
+
+    // 3. Start the timer (2000ms = 2 seconds)
+    setInterval(swap, 2000);
+  }()
+)
+    document.addEventListener("DOMContentLoaded", () => {
+  const images = [
+    "../assets/3dVis.jpeg",
+    "../assets/3dVis2.jpeg",
+    "../assets/3dVis3.jpeg" // fixed typo
+  ];
+
+  let i = 0;
+  const imgEl = document.getElementById("hero-image");
+
+  if (!imgEl) return; // safety check
+
+  // set initial image
+  imgEl.src = images[i];
+
+  function swap() {
+    i = (i + 1) % images.length;
+    imgEl.src = images[i];
+  }
+
+  setInterval(swap, 2000);
+});
+(function () {
+    const images = [
+      "../img/expertise_card/shopDrawMain.png",
+      "../img/expertise_card/shopDraw1.png",
+      "../img/expertise_card/shopDraw2.png",
+      "../img/expertise_card/shopDraw3.png",
+    ];
+
+    let i = 0;
+    const imgEl = document.getElementById('hero-Image2');
+
+    // 2. The function that swaps the source
+    function swap() {
+      i = (i + 1) % images.length; // Cycles: 0, 1, 2, 0, 1...
+      imgEl.src = images[i];
+    }
+
+    // 3. Start the timer (2000ms = 2 seconds)
+    setInterval(swap, 2000);
+  }()
+)
+    document.addEventListener("DOMContentLoaded", () => {
+  const images = [
+    "../assets/3dVis.jpeg",
+    "../assets/3dVis2.jpeg",
+    "../assets/3dVis3.jpeg" // fixed typo
+  ];
+
+  let i = 0;
+  const imgEl = document.getElementById("hero-image");
+
+  if (!imgEl) return; // safety check
+
+  // set initial image
+  imgEl.src = images[i];
+
+  function swap() {
+    i = (i + 1) % images.length;
+    imgEl.src = images[i];
+  }
+
+  setInterval(swap, 2000);
+});
