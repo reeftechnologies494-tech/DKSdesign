@@ -47,130 +47,109 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-});
-(function () {
-    const images = [
-      "../assets/3dVis.jpeg",
-      "../assets/3dVis2.jpg", 
-      "../assets/3dvVis3.jpg"
-    ];
 
-    let i = 0;
-    const imgEl = document.getElementById('hero-image');
+    // Image Swappers with Smooth Transition
+    function setupImageSwapper(elementId, images, intervalDelay = 2000) {
+        const imgEl = document.getElementById(elementId);
+        if (!imgEl) return;
 
-    // 2. The function that swaps the source
-    function swap() {
-      i = (i + 1) % images.length; // Cycles: 0, 1, 2, 0, 1...
-      imgEl.src = images[i];
+        let currentIndex = 0;
+        
+        // Add smooth transition for opacity
+        imgEl.style.transition = "opacity 0.4s ease-in-out";
+
+        function swap() {
+            // fade out
+            imgEl.style.opacity = 0;
+            
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % images.length;
+                imgEl.src = images[currentIndex];
+                
+                // fade in
+                imgEl.style.opacity = 1;
+            }, 400); // Wait for fade out to complete before swapping src
+        }
+
+        setInterval(swap, intervalDelay);
     }
 
-    // 3. Start the timer (2000ms = 2 seconds)
-    setInterval(swap, 2000);
-  }()
-)
-    document.addEventListener("DOMContentLoaded", () => {
-  const images = [
-    "../assets/3dVis.jpeg",
-    "../assets/3dVis2.jpeg",
-    "../assets/3dVis3.jpeg" // fixed typo
-  ];
+    // Initialize the swappers for different locations
+    setupImageSwapper('hero-image', [
+        "../assets/3dVis.jpeg",
+        "../assets/3dVis2.jpeg",
+        "../assets/3dVis3.jpeg" 
+    ], 3000); 
 
-  let i = 0;
-  const imgEl = document.getElementById("hero-image");
+    setupImageSwapper('hero-Image1', [
+        "../img/expertise_card/constructionDocMain.png",
+        "../img/expertise_card/constructionDoc.png",
+    ], 2500);
 
-  if (!imgEl) return; // safety check
+    setupImageSwapper('hero-Image2', [
+        "../img/expertise_card/shopDrawMain.png",
+        "../img/expertise_card/shopDraw1.png",
+        "../img/expertise_card/shopDraw2.png",
+        "../img/expertise_card/shopDraw3.png",
+    ], 2800);
 
-  // set initial image
-  imgEl.src = images[i];
+    // Carousel Logic for Signature Projects
+    const initCarousel = () => {
+        const track = document.getElementById('sliderTrack');
+        const prevBtn = document.getElementById('slidePrev');
+        const nextBtn = document.getElementById('slideNext');
+        const dots = document.querySelectorAll('.dot-btn');
+        if (!track) return;
 
-  function swap() {
-    i = (i + 1) % images.length;
-    imgEl.src = images[i];
-  }
+        let currentIndex = 0;
+        const totalSlides = dots.length || track.children.length;
 
-  setInterval(swap, 2000);
-});
-(function () {
-    const images = [
-      "../img/expertise_card/constructionDocMain.png",
-      "../img/expertise_card/constructionDoc.png",
-    ];
+        const updateCarousel = () => {
+            // Calculate translation percentage based on the number of slides shown (usually 1, but depends on layout)
+            // Assuming each slide is 100% / number of visible slides. We'll translate by 100% of a slide.
+            // In the simplest case, track moves left by currentIndex * 100%. Wait, what is the css for slider?
+            // Usually, track is display flex, slides are flex: 0 0 100% or similar. 
+            // In index.html it uses transform: translateX(-X%) or similar. 
+            // But we can check styling if needed, standard is often 100% of viewport width per slide or 100% container
+            
+            // Assuming slides are full width of the viewport/container:
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            track.style.transition = 'transform 0.5s ease-in-out';
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        };
 
-    let i = 0;
-    const imgEl = document.getElementById('hero-Image1');
+        if(prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateCarousel();
+            });
+        }
 
-    // 2. The function that swaps the source
-    function swap() {
-      i = (i + 1) % images.length; // Cycles: 0, 1, 2, 0, 1...
-      imgEl.src = images[i];
-    }
+        if(nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateCarousel();
+            });
+        }
 
-    // 3. Start the timer (2000ms = 2 seconds)
-    setInterval(swap, 2000);
-  }()
-)
-    document.addEventListener("DOMContentLoaded", () => {
-  const images = [
-    "../assets/3dVis.jpeg",
-    "../assets/3dVis2.jpeg",
-    "../assets/3dVis3.jpeg" // fixed typo
-  ];
+        dots.forEach((dot, index) => {
+            if (dot) {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+            }
+        });
+        
+        // Auto slide
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        }, 5000);
+    };
 
-  let i = 0;
-  const imgEl = document.getElementById("hero-image");
-
-  if (!imgEl) return; // safety check
-
-  // set initial image
-  imgEl.src = images[i];
-
-  function swap() {
-    i = (i + 1) % images.length;
-    imgEl.src = images[i];
-  }
-
-  setInterval(swap, 2000);
-});
-(function () {
-    const images = [
-      "../img/expertise_card/shopDrawMain.png",
-      "../img/expertise_card/shopDraw1.png",
-      "../img/expertise_card/shopDraw2.png",
-      "../img/expertise_card/shopDraw3.png",
-    ];
-
-    let i = 0;
-    const imgEl = document.getElementById('hero-Image2');
-
-    // 2. The function that swaps the source
-    function swap() {
-      i = (i + 1) % images.length; // Cycles: 0, 1, 2, 0, 1...
-      imgEl.src = images[i];
-    }
-
-    // 3. Start the timer (2000ms = 2 seconds)
-    setInterval(swap, 2000);
-  }()
-)
-    document.addEventListener("DOMContentLoaded", () => {
-  const images = [
-    "../assets/3dVis.jpeg",
-    "../assets/3dVis2.jpeg",
-    "../assets/3dVis3.jpeg" // fixed typo
-  ];
-
-  let i = 0;
-  const imgEl = document.getElementById("hero-image");
-
-  if (!imgEl) return; // safety check
-
-  // set initial image
-  imgEl.src = images[i];
-
-  function swap() {
-    i = (i + 1) % images.length;
-    imgEl.src = images[i];
-  }
-
-  setInterval(swap, 2000);
+    initCarousel();
 });

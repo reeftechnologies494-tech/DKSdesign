@@ -598,13 +598,14 @@ body {
   background: linear-gradient(135deg, #0d2321, #009e90);
   color: #ffffff;
   /* Set a consistent padding so the button size stays the same */
-  padding: 1.2rem 4.5rem 1.2rem 3rem; 
+  padding: 1.2rem 4.5rem 1.2rem 3rem;
   font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1px;
-  transition: var(--transition-smooth); /* Use your existing smooth transition */
+  transition: var(--transition-smooth);
+  /* Use your existing smooth transition */
   position: relative;
   border: none;
   cursor: pointer;
@@ -807,6 +808,7 @@ body {
   color: #ffffff;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
+
 .team-redirect {
   position: absolute;
   top: 1.5rem;
@@ -948,6 +950,9 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .expertise-card::before {
@@ -998,14 +1003,21 @@ body {
   filter: grayscale(1) contrast(1.1);
   transition: all 0.8s ease;
 }
-.steelDetailing img{
-  transform: scale(1.36);
-rotate: 270deg;
 
-}
+
+
 .expertise-card:hover .card-img img {
   transform: scale(1.3);
   filter: grayscale(0.4) contrast(1.2);
+}
+
+#bim-img {
+  object-position: top;
+  transition: all 1s ease !important;
+}
+
+.expertise-card:hover #bim-img {
+  object-position: bottom;
 }
 
 .card-content {
@@ -1014,6 +1026,17 @@ rotate: 270deg;
   background: linear-gradient(to top,
       rgba(255, 255, 255, 0.95),
       rgba(255, 255, 255, 0.7));
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .card-content h3 {
@@ -1030,6 +1053,11 @@ rotate: 270deg;
   color: var(--text-muted);
   line-height: 1.7;
   margin-bottom: 1.8rem;
+}
+
+ i {
+  font-size: 1rem;
+  padding: 0;
 }
 
 .service-btn {
@@ -1354,7 +1382,8 @@ rotate: 270deg;
   border-color: var(--accent-gold);
   transform: scale(1.1) rotate(5deg);
 }
-.social-grid-smallDevice{
+
+.social-grid-smallDevice {
   display: flex;
   height: 10vh;
   gap: 1rem;
@@ -1371,10 +1400,10 @@ rotate: 270deg;
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  
-.social-side {
-  display: none;
-}
+
+  .social-side {
+    display: none;
+  }
 
   .expertise-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1393,17 +1422,18 @@ rotate: 270deg;
   }
 }
 
-@media screen and (min-width:1024){
-  .social-grid-smallDevice{
+@media screen and (min-width:1024px) {
+  .social-grid-smallDevice {
     display: none;
   }
-  
+
 }
+
 @media (max-width: 768px) {
   .navbar {
     padding: 1rem 5%;
   }
-  
+
 
   .mobile-toggle {
     display: flex;

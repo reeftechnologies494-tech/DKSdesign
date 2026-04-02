@@ -47,6 +47,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon.png" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="manifest" href="./img/site.webmanifest" />
   <link rel="stylesheet" href="./css/style.css" />
 </head>
@@ -185,10 +186,9 @@
         <span class="section-subtitle">What We Do Best</span>
       </div>
       <div class="expertise-grid">
-        <div class="expertise-card" data-scroll data-scroll-speed="0.4">
+        <div class="expertise-card" data-scroll data-scroll-speed="0.06">
           <div class="card-img">
-            <img style="height:600px; transform: none; object-fit:fill;" src="./assets/crystalblu.jpeg" alt="BIM Services" />
-            <!-- <img src="./img/ser/projtectfinal.png" alt="BIM Services" /> -->
+            <img id="bim-img" src="./assets/crystalblu.jpeg" alt="BIM Services" />
           </div>
           <div class="card-content">
             <h3>BIM SERVICES</h3>
@@ -196,13 +196,14 @@
               High-fidelity data modeling, clash detection, and LOD 400/500
               development for seamless construction coordination.
             </p>
-            <a href="pages/services.html" class="service-btn" title="Learn more about our BIM Modeling Services">Learn
-              More</a>
+            <div class="card-actions">
+              <a href="pages/services.html" class="service-btn" title="Learn more about our BIM Modeling Services">Learn More</a>
+            </div>
           </div>
         </div>
-        <div class="expertise-card" data-scroll data-scroll-speed="0.3">
-          <div class="card-img steelDetailing" style="display: flex; justify-content: center; align-items: center;">
-            <img style="padding: none;" src="./img/expertise_card/steelDetailing.png" alt="Steel Detailing" />
+        <div class="expertise-card" data-scroll data-scroll-speed="0.03">
+          <div class="card-img steelDetailing">
+            <img style="transform:scale(1.2)" src="./img/expertise_card/steelDetailing.png" alt="Steel Detailing" />
           </div>
           <div class="card-content">
             <h3>STEEL DETAILING</h3>
@@ -211,11 +212,16 @@
               crafted with precision to support seamless structural steel
               framework installation.
             </p>
-            <a href="pages/services.html" class="service-btn"
-              title="Learn more about our Steel Detailing Excellence">Learn More</a>
+            <div class="card-actions">
+              <a href="pages/services.html" class="service-btn" title="Learn more about our Steel Detailing Excellence">Learn More</a>
+              <div style="display: flex; justify-content: center; gap: 10px; align-items: center;">
+                <a target="_blank" class="service-btn" href="./assets/pdf/SteelDetailing/Col-1.pdf" title="Download Design"><i class="ri-file-download-line"></i></a>
+                <a target="_blank" class="service-btn" href="./assets/pdf/SteelDetailing/Col-1.pdf" title="Download Design2"><i class="ri-file-download-line"></i></a>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="expertise-card" data-scroll data-scroll-speed="0.2">
+        <div class="expertise-card" data-scroll data-scroll-speed="0.08">
           <div class="card-img">
             <img src="./img/ser/projtectfinal.png" alt="MEPF Services" />
           </div>
@@ -225,11 +231,12 @@
               Fully coordinated HVAC, Electrical, and Firefighting systems
               designed for installation accuracy and space efficiency.
             </p>
-            <a href="pages/services.html" class="service-btn"
-              title="Learn more about our MEPF Coordination Services">Learn More</a>
+            <div class="card-actions">
+              <a href="pages/services.html" class="service-btn" title="Learn more about our MEPF Coordination Services">Learn More</a>
+            </div>
           </div>
         </div>
-        <div class="expertise-card" data-scroll data-scroll-speed="0.4">
+        <div class="expertise-card" data-scroll data-scroll-speed="0.04">
           <div class="card-img">
             <img id="hero-Image2" src="./img/expertise_card/shopDrawMain.png" alt="Shop Drawings" />
           </div>
@@ -237,29 +244,32 @@
             <h3>SHOP DRAWINGS</h3>
             <p>
               Detailed working drawings prepared for accurate site execution
-              and fabrication clarity. <br /><br />
+              and fabrication clarity.
             </p>
-            <a href="pages/services.html" class="service-btn"
-              title="Learn more about our Fabrication & Shop Drawings">Learn More</a>
+            <div class="card-actions">
+              <a href="pages/services.html" class="service-btn" title="Learn more about our Fabrication & Shop Drawings">Learn More</a>
+            </div>
           </div>
         </div>
-        <div class="expertise-card" data-scroll data-scroll-speed="0.3">
+        <div class="expertise-card" data-scroll data-scroll-speed="0.07">
           <div class="card-img">
-            <img style="transform: scale(95%);" id="hero-image" src="./assets/3dVis.jpeg" alt="3D Visualization" />
+            <img id="hero-image" src="./assets/3dVis.jpeg" alt="3D Visualization" />
           </div>
           <div class="card-content">
             <h3>3D VISUALIZATION</h3>
             <p>
               Photorealistic rendering and immersive walkthrough presentations
-              for design approvals. <br /><br />
+              for design approvals.
             </p>
-            <a href="pages/services.html" class="service-btn"
-              title="Learn more about our 3D Visualization & VR Services">Learn More</a>
+            <div class="card-actions">
+              <a href="pages/3dVisualisation.html" class="service-btn" title="Learn more about our 3D Visualization & VR Services">View More</a>
+            </div>
           </div>
         </div>
-        <div class="expertise-card" data-scroll data-scroll-speed="0.2">
+        <div class="expertise-card" data-scroll data-scroll-speed="0.02">
           <div class="card-img">
-            <img id="hero-Image1" src="./img/expertise_card/constructionDocMain.png" alt="Construction Documentation & GFC Technical Packages" />
+            <img id="hero-Image1" src="./img/expertise_card/constructionDocMain.png"
+              alt="Construction Documentation & GFC Technical Packages" />
           </div>
           <div class="card-content">
             <h3>CONSTRUCTION DOCS</h3>
@@ -267,28 +277,30 @@
               GFC drawings, BOQ support, tender documentation, and
               permit-ready technical packages.
             </p>
-            <a href="pages/services.html" class="service-btn"
-              title="Learn more about our Construction Documentation Services">Learn More</a>
+            <div class="card-actions">
+              <a href="pages/services.html" class="service-btn" title="Learn more about our Construction Documentation Services">Learn More</a>
+            </div>
           </div>
         </div>
-        <div class="expertise-card" data-scroll data-scroll-speed="0.4">
+        <div class="expertise-card" data-scroll data-scroll-speed="0.05">
           <div class="card-img">
-            <img style="object-fit: contain;" src="./assets/secondments.png" style="filter: none;" alt="Secondments" />
+            <img src="./assets/secondments.png" alt="Secondments" />
           </div>
           <div class="card-content">
             <h3>SECONDMENTS</h3>
             <p>
               Elevate your project's efficiency with our professional BIM secondment services, designed to integrate
               seamlessly into your existing team. Our certified experts provide high-level technical support and model
-              coordination to ensure your digital workflows meet the most rigorous industry standards. <br /><br />
+              coordination to ensure your digital workflows meet the most rigorous industry standards.
             </p>
-            <a href="pages/services.html" class="service-btn"
-              title="Learn more about our Professional Secondment Services">Learn More</a>
+            <div class="card-actions">
+              <a href="pages/services.html" class="service-btn" title="Learn more about our Professional Secondment Services">Learn More</a>
+            </div>
           </div>
         </div>
 
         <!-- Interior Design -->
-        <div class="expertise-card" data-scroll data-scroll-speed="0.3">
+        <div class="expertise-card" data-scroll data-scroll-speed="0.09">
           <div class="card-img">
             <img src="img/ser/interior.jpeg" alt="Interior Design Services" />
           </div>
@@ -299,8 +311,9 @@
               space planning, material selection, and 3D concepts to enhance
               aesthetics and usability.
             </p>
-            <a href="pages/services.html" class="service-btn" id="learnMore"
-              title="Learn more about our Interior Design Services">Learn More</a>
+            <div class="card-actions">
+              <a href="pages/interior-design.html" class="service-btn" id="learnMore" title="Learn more about our Interior Design Services">Learn More</a>
+            </div>
           </div>
         </div>
       </div>
@@ -315,7 +328,7 @@
         <div class="slider-track" id="sliderTrack">
           <!-- Project 1 -->
           <div class="project-slide">
-            <img src="./img/portfolioImg/FIFAWC4.jpg" alt="Corporate Office" />
+            <img src="./img/portfolioImg/FSLA4.jpg" alt="Corporate Office" />
             <div class="slide-info">
               <span class="project-tag">LOS ANGELES</span>
               <h3 class="project-name">FOOTBALL STADIUM</h3>

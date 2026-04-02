@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Visualization | DKSDesign</title>
+
+  <!-- SEO Friendly Meta Tags -->
+  <meta name="description"
+    content="Explore DKS Design's 3D Visualization projects. We deliver functional, creative, and aesthetically pleasing 3D Visualization solutions leveraging comprehensive 3D concepts and space planning." />
+  <meta name="keywords"
+    content="3D Visualization, Space Planning, 3D Concepts, Material Selection, DKS Design, MEPF Integration, Commercial Interiors, Residential Interiors" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="3D Visualization Gallery | DKS Design" />
+  <meta property="og:description"
+    content="View our interior design portfolio featuring creative and functional space planning solutions." />
+  <meta property="og:url" content="https://dksdesign.in/3d-visualisation.html" />
+  <meta property="og:image" content="https://dksdesign.in/img/ser/interior.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Interior Design Gallery | DKS Design" />
+  <meta name="twitter:description"
+    content="Creative, functional, and striking interior design solutions by DKS Design." />
+  <meta name="twitter:image" content="https://dksdesign.in/img/ser/interior.jpeg" />
+
+  <link rel="canonical" href="https://dksdesign.in/3d-visualisation.html" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon.png" />
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* Hero Section Specifics */
+    .interior-hero {
+      padding: 150px 20px 80px;
+      text-align: center;
+      background: linear-gradient(to bottom, rgba(10, 10, 10, 0.9), var(--bg-dark));
+      position: relative;
+    }
+
+    .interior-hero-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .text-gold {
+      color: var(--accent-gold, #c5a880);
+    }
+
+    .interior-hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* Premium Bento Grid Layout */
+    .bento-container {
+      max-width: 1400px;
+      margin: 0 auto 100px;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 280px;
+      gap: 20px;
+      /* Consistent premium gap */
+    }
+
+    .bento-item {
+      position: relative;
+      border-radius: 20px;
+      /* Modern rounding */
+      overflow: hidden;
+      background: #111;
+      /* Subtle border & diffused shadow */
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      /* Hardware accel & base transform for hover scale */
+      transform: translateZ(0) translateY(0);
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+    }
+
+    .bento-item:hover {
+      transform: translateZ(0) translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    }
+
+    .bento-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+    }
+
+    .bento-item:hover img {
+      transform: scale(1.05);
+      /* Slight upscale on hover */
+    }
+
+    /* Grid Spanning Classes (Hierarchy) */
+    .col-span-2 {
+      grid-column: span 2;
+    }
+
+    .col-span-3 {
+      grid-column: span 3;
+    }
+
+    .row-span-2 {
+      grid-row: span 2;
+    }
+
+    /* Column Reduction for Responsiveness */
+    @media (max-width: 992px) {
+      .bento-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 250px;
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .bento-container {
+        grid-template-columns: 1fr;
+        /* True 1-column mobile stack */
+        grid-auto-rows: 250px;
+        padding: 0 20px;
+      }
+
+      /* Crucial: Disable spans on mobile */
+      .col-span-2,
+      .col-span-3,
+      .row-span-2 {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+    }
+  </style>
+</head>
+
+<body data-scroll-container>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="logo">
+      <a href="../index.html">
+        <span class="name">DKSDesign</span>
+      </a>
+    </div>
+
+    <button class="mobile-toggle" id="menuToggle" aria-label="Toggle Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="nav-right" id="navRight">
+      <div class="nav-links">
+        <a href="./about.html">About</a>
+        <a href="./services.html">Services</a>
+        <a href="./portfolio.html">Portfolio</a>
+        <a href="./contactus.html">Contact</a>
+      </div>
+      <a href="#contact" class="contact-btn">Get in Touch</a>
+    </div>
+  </nav>
+
+  <main class="content">
+
+    <!-- Hero Section -->
+    <section class="interior-hero">
+      <h1 class="interior-hero-title">
+        3D <span class="text-gold">Visualizations</span>
+      </h1>
+
+      <p>
+        High-quality architectural and interior 3D visualization that transforms concepts into
+        realistic, build-ready experiences.
+      </p>
+    </section>
+
+    <!-- Bento Grid -->
+    <section class="bento-container">
+
+      <figure class="bento-item col-span-2 row-span-2">
+        <img src="../img/interiorDesign/3dVisual.jpeg" alt="Modern living room 3D visualization" loading="lazy" />
+      </figure>
+
+      <figure class="bento-item col-span-2">
+        <img src="../img/interiorDesign/3dVisual2.jpeg" alt="Luxury interior rendering" loading="lazy" />
+      </figure>
+
+      <figure class="bento-item row-span-2">
+        <img src="../img/interiorDesign/3dVisual3.jpeg" alt="Bedroom 3D design concept" loading="lazy" />
+      </figure>
+
+      <figure class="bento-item">
+        <img src="../img/interiorDesign/3dVisual5.jpeg" alt="Interior lighting design visualization" loading="lazy" />
+      </figure>
+
+      <figure class="bento-item col-span-2">
+        <img src="../img/interiorDesign/3dVisual4.jpeg" alt="Open space interior concept" loading="lazy" />
+      </figure>
+
+      <!-- Remaining images -->
+      <figure class="bento-item">
+        <img src="../img/interiorDesign/3dVisual6.jpeg" alt="3D interior concept 6" loading="lazy" />
+      </figure>
+
+      <figure class="bento-item">
+        <img src="../img/interiorDesign/3dVisual7.jpeg" alt="3D interior concept 7" loading="lazy" />
+      </figure>
+
+      <figure class="bento-item">
+        <img src="../img/interiorDesign/3dVisual8.jpeg" alt="3D interior concept 8" loading="lazy" />
+      </figure>
+
+      <figure class="bento-item">
+        <img src="../img/interiorDesign/3dVisual9.jpeg" alt="3D interior concept 9" loading="lazy" />
+      </figure>
+
+      <figure class="bento-item">
+        <img src="../img/interiorDesign/3dVisual10.jpg" alt="3D interior concept 10" loading="lazy" />
+      </figure>
+
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="cta-footer">
+      <div class="cta-text">
+        <h2>
+          LET'S BUILD<br />
+          <span class="outline">SOMETHING</span><br />
+          EXTRAORDINARY
+        </h2>
+
+        <address class="contact-info">
+          <strong>DKS Design</strong>
+          <span>📍 C4B Janakpuri, New Delhi</span>
+          <span>📞 +91 9810464942</span>
+          <span>✉️ dks@dksdesign.in</span>
+        </address>
+      </div>
+
+      <div class="social-side">
+        <div class="social-grid">
+          <a href="https://wa.me/+919810464942" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+
+        <p class="copyright">© 2024 DKS Design</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="../js/script.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js"></script>
+  <script>
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true,
+      lerp: 0.05,
+      getSpeed: true,
+      getDirection: true,
+      smoothTouch: false,
+      touchMultiplier: 2,
+      smartphone: { smooth: true, breakpoint: 768, lerp: 0.08 },
+      tablet: { smooth: true, breakpoint: 1024, lerp: 0.06 }
+    });
+  </script>
+</body>
+</html>
