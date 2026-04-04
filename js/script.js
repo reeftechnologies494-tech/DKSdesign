@@ -2,14 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const menuToggle = document.getElementById('menuToggle');
     const navRight = document.getElementById('navRight');
-    
+
     if (menuToggle && navRight) {
         menuToggle.addEventListener('click', () => {
             navRight.classList.toggle('active');
             menuToggle.classList.toggle('active');
             // Toggle FontAwesome icon between bars and times
             const icon = menuToggle.querySelector('i');
-            if(icon) {
+            if (icon) {
                 if (navRight.classList.contains('active')) {
                     icon.classList.remove('fa-bars');
                     icon.classList.add('fa-times');
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 navRight.classList.remove('active');
                 menuToggle.classList.remove('active');
                 const icon = menuToggle.querySelector('i');
-                if(icon) {
+                if (icon) {
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
                 }
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 navRight.classList.remove('active');
                 menuToggle.classList.remove('active');
                 const icon = menuToggle.querySelector('i');
-                if(icon) {
+                if (icon) {
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
                 }
@@ -54,19 +54,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!imgEl) return;
 
         let currentIndex = 0;
-        
+
         // Add smooth transition for opacity
         imgEl.style.transition = "opacity 0.4s ease-in-out";
 
         function swap() {
             // fade out
             imgEl.style.opacity = 0;
-            
+
             setTimeout(() => {
                 currentIndex = (currentIndex + 1) % images.length;
                 imgEl.src = images[currentIndex];
-                
-                // fade in
                 imgEl.style.opacity = 1;
             }, 400); // Wait for fade out to complete before swapping src
         }
@@ -76,22 +74,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize the swappers for different locations
     setupImageSwapper('hero-image', [
-        "../assets/3dVis.jpeg",
-        "../assets/3dVis2.jpeg",
-        "../assets/3dVis3.jpeg" 
-    ], 3000); 
+        "./assets/3dVis.jpeg",
+        "./assets/3dVis2.jpeg",
+        "./assets/3dVis3.jpeg"
+    ], 3000);
 
     setupImageSwapper('hero-Image1', [
-        "../img/expertise_card/constructionDocMain.png",
-        "../img/expertise_card/constructionDoc.png",
+        "./img/expertise_card/constructionDocMain.png",
+        "./img/expertise_card/constructionDoc.png",
     ], 2500);
-
-    setupImageSwapper('hero-Image2', [
-        "../img/expertise_card/shopDrawMain.png",
-        "../img/expertise_card/shopDraw1.png",
-        "../img/expertise_card/shopDraw2.png",
-        "../img/expertise_card/shopDraw3.png",
-    ], 2800);
+    setupImageSwapper('hero-Image3', [
+        "./img/interiorDesign/intDes14.jpeg",
+        "./img/interiorDesign/intDes15.jpeg",
+        "./img/interiorDesign/intDes16.jpeg",
+        "./img/interiorDesign/intDes9.jpeg",
+    ], 2000);
 
     // Carousel Logic for Signature Projects
     const initCarousel = () => {
@@ -103,32 +100,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let currentIndex = 0;
         const totalSlides = dots.length || track.children.length;
-
         const updateCarousel = () => {
-            // Calculate translation percentage based on the number of slides shown (usually 1, but depends on layout)
-            // Assuming each slide is 100% / number of visible slides. We'll translate by 100% of a slide.
-            // In the simplest case, track moves left by currentIndex * 100%. Wait, what is the css for slider?
-            // Usually, track is display flex, slides are flex: 0 0 100% or similar. 
-            // In index.html it uses transform: translateX(-X%) or similar. 
-            // But we can check styling if needed, standard is often 100% of viewport width per slide or 100% container
-            
-            // Assuming slides are full width of the viewport/container:
             track.style.transform = `translateX(-${currentIndex * 100}%)`;
-            track.style.transition = 'transform 0.5s ease-in-out';
-            
+            track.style.transition = 'transform 1s ease-in-out';
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentIndex);
             });
         };
 
-        if(prevBtn) {
+        if (prevBtn) {
             prevBtn.addEventListener('click', () => {
                 currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
                 updateCarousel();
             });
         }
 
-        if(nextBtn) {
+        if (nextBtn) {
             nextBtn.addEventListener('click', () => {
                 currentIndex = (currentIndex + 1) % totalSlides;
                 updateCarousel();
@@ -143,12 +130,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
-        
+
         // Auto slide
         setInterval(() => {
             currentIndex = (currentIndex + 1) % totalSlides;
             updateCarousel();
-        }, 5000);
+        }, 3500);
     };
 
     initCarousel();

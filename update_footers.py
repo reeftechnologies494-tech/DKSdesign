@@ -191,7 +191,7 @@ for filename in ['index.html', 'pages/about.html', 'pages/services.html', 'pages
         <div class="footer-col footer-social">
           <h3>Connect With Us</h3>
           <div class="social-icons">
-            <a href="https://wa.me/919810464942" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://wa.me/+919810464942" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             <a href="https://www.instagram.com/dksdesign.in" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://www.facebook.com/profile.php?id=61575144633559" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.linkedin.com/company/dks-design/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>

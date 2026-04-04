@@ -1,23 +1,28 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Interior Design | DKS Design</title>
-  
+
   <!-- SEO Friendly Meta Tags -->
-  <meta name="description" content="Explore DKS Design's interior design projects. We deliver functional, creative, and aesthetically pleasing interior solutions leveraging comprehensive 3D concepts and space planning." />
-  <meta name="keywords" content="Interior Design, Space Planning, 3D Concepts, Material Selection, DKS Design, MEPF Integration, Commercial Interiors, Residential Interiors" />
+  <meta name="description"
+    content="Explore DKS Design's interior design projects. We deliver functional, creative, and aesthetically pleasing interior solutions leveraging comprehensive 3D concepts and space planning." />
+  <meta name="keywords"
+    content="Interior Design, Space Planning, 3D Concepts, Material Selection, DKS Design, MEPF Integration, Commercial Interiors, Residential Interiors" />
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Interior Design Gallery | DKS Design" />
-  <meta property="og:description" content="View our interior design portfolio featuring creative and functional space planning solutions." />
+  <meta property="og:description"
+    content="View our interior design portfolio featuring creative and functional space planning solutions." />
   <meta property="og:url" content="https://dksdesign.in/interior-design.html" />
   <meta property="og:image" content="https://dksdesign.in/img/ser/interior.jpeg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Interior Design Gallery | DKS Design" />
-  <meta name="twitter:description" content="Creative, functional, and striking interior design solutions by DKS Design." />
+  <meta name="twitter:description"
+    content="Creative, functional, and striking interior design solutions by DKS Design." />
   <meta name="twitter:image" content="https://dksdesign.in/img/ser/interior.jpeg" />
 
   <link rel="canonical" href="https://dksdesign.in/interior-design.html" />
@@ -25,11 +30,13 @@
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;700;800;900&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;700;800;900&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon.png" />
-  
+
   <link rel="stylesheet" href="../css/style.css" />
   <style>
     /* Hero Section Specifics */
@@ -39,6 +46,7 @@
       background: linear-gradient(to bottom, rgba(10, 10, 10, 0.9), var(--bg-dark));
       position: relative;
     }
+
     .interior-hero-title {
       font-family: 'Outfit', sans-serif;
       font-size: clamp(2.5rem, 6vw, 5rem);
@@ -46,9 +54,11 @@
       line-height: 1.1;
       margin-bottom: 20px;
     }
+
     .text-gold {
       color: var(--accent-gold, #c5a880);
     }
+
     .interior-hero p {
       max-width: 600px;
       margin: 0 auto;
@@ -65,25 +75,28 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-auto-rows: 280px;
-      gap: 20px; /* Consistent premium gap */
+      gap: 20px;
+      /* Consistent premium gap */
     }
 
     .bento-item {
       position: relative;
-      border-radius: 20px; /* Modern rounding */
+      border-radius: 20px;
+      /* Modern rounding */
       overflow: hidden;
       background: #111;
       /* Subtle border & diffused shadow */
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
       /* Hardware accel & base transform for hover scale */
-      transform: translateZ(0) translateY(0); 
+      transform: translateZ(0) translateY(0);
       transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
     }
+
     .bento-item:hover {
       transform: translateZ(0) translateY(-6px);
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
     }
-    
+
     .bento-item img {
       width: 100%;
       height: 100%;
@@ -91,14 +104,24 @@
       transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       will-change: transform;
     }
+
     .bento-item:hover img {
-      transform: scale(1.05); /* Slight upscale on hover */
+      transform: scale(1.05);
+      /* Slight upscale on hover */
     }
 
     /* Grid Spanning Classes (Hierarchy) */
-    .col-span-2 { grid-column: span 2; }
-    .col-span-3 { grid-column: span 3; }
-    .row-span-2 { grid-row: span 2; }
+    .col-span-2 {
+      grid-column: span 2;
+    }
+
+    .col-span-3 {
+      grid-column: span 3;
+    }
+
+    .row-span-2 {
+      grid-row: span 2;
+    }
 
     /* Column Reduction for Responsiveness */
     @media (max-width: 992px) {
@@ -108,20 +131,26 @@
         gap: 16px;
       }
     }
+
     @media (max-width: 600px) {
       .bento-container {
-        grid-template-columns: 1fr; /* True 1-column mobile stack */
+        grid-template-columns: 1fr;
+        /* True 1-column mobile stack */
         grid-auto-rows: 250px;
         padding: 0 20px;
       }
+
       /* Crucial: Disable spans on mobile */
-      .col-span-2, .col-span-3, .row-span-2 {
+      .col-span-2,
+      .col-span-3,
+      .row-span-2 {
         grid-column: span 1;
         grid-row: span 1;
       }
     }
   </style>
 </head>
+
 <body>
 
   <!-- Navbar -->
@@ -151,13 +180,14 @@
         <span>INTERIOR</span> <span class="text-gold">DESIGN</span>
       </h1>
       <p>
-        Inspiring spaces that blend aesthetic beauty with functional intelligence. From luxury villas and corporate offices to premium retail outlets, discover how we bring interior visions to life.
+        Inspiring spaces that blend aesthetic beauty with functional intelligence. From luxury villas and corporate
+        offices to premium retail outlets, discover how we bring interior visions to life.
       </p>
     </section>
 
     <!-- Bento Grid -->
     <section class="bento-container">
-      
+
       <!-- Box 7: Large Focal Point (Top Left) -->
       <div class="bento-item col-span-2 row-span-2" data-scroll data-scroll-speed="0.05">
         <img src="../img/interiorDesign/intDes7.jpeg" alt="Interior Design 7" loading="lazy" />
@@ -187,7 +217,7 @@
       <div class="bento-item" data-scroll data-scroll-speed="0.07">
         <img src="../img/interiorDesign/intDes12.jpeg" alt="Interior Design 12" loading="lazy" />
       </div>
-      
+
     </section>
 
     <!-- Footer -->
@@ -203,12 +233,15 @@
           <span><i class="fas fa-envelope"></i> dks@dksdesign.in</span>
         </div>
       </div>
-      <div class="social-side">
+        <div class="social-side">
         <div class="social-grid">
-          <a href="https://wa.me/+919810464942" class="social-box" target="_blank" title="Contact us on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" class="social-box" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-box" title="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-box" title="Connect with us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/+919810464942" class="social-box" target="_blank" title="Contact us on WhatsApp"><i
+              class="fab fa-whatsapp"></i></a>
+          <a href="" class="social-box" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61575144633559&rdid=4PmdZ5U7T6iF0Ujh&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AgqiyiV8U%2F#"
+            class="social-box" title="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/dksdesign.in" class="social-box" title="Connect with us on LinkedIn"><i
+              class="fab fa-linkedin-in"></i></a>
         </div>
         <div class="copyright">© 2024 DKS Design. All Rights Reserved.</div>
       </div>
@@ -231,4 +264,5 @@
     });
   </script>
 </body>
+
 </html>
