@@ -60,6 +60,15 @@ section {
   margin: 0 auto;
 }
 
+.minimalist-card-img {
+  filter: grayscale(2);
+}
+
+.minimalist-card:hover .minimalist-card-img {
+  filter: grayscale(0);
+  transition: filter 0.3s ease-in-out;
+}
+
 .strength-card {
   background: var(--surface-color);
   padding: 2.5rem;
@@ -70,7 +79,8 @@ section {
 
 .strength-card:hover {
   transform: translateY(-5px);
-  border-color: var(--accent-gold, #d4af37);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
 }
 
 .strength-card h3 {
