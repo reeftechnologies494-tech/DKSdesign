@@ -48,46 +48,90 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Image Swappers with Smooth Transition
+    // Advanced Lazy Loading Implementation (Intersection Observer)
+    const lazyImages = document.querySelectorAll("img[data-src]");
+    if ("IntersectionObserver" in window) {
+        const lazyImageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.onload = () => img.classList.add("loaded");
+                    img.removeAttribute("data-src");
+                    lazyImageObserver.unobserve(img);
+                }
+            });
+        });
+        lazyImages.forEach(img => {
+            lazyImageObserver.observe(img);
+        });
+    } else {
+        // Fallback for browsers without IntersectionObserver
+        lazyImages.forEach(img => {
+            img.src = img.dataset.src;
+            img.removeAttribute("data-src");
+        });
+    }
+
+    // Image Swappers with Smooth Transition (Delayed until images are loaded)
     function setupImageSwapper(elementId, images, intervalDelay = 2000) {
         const imgEl = document.getElementById(elementId);
         if (!imgEl) return;
 
         let currentIndex = 0;
-
-        // Add smooth transition for opacity
         imgEl.style.transition = "opacity 0.4s ease-in-out";
 
-        function swap() {
-            // fade out
-            imgEl.style.opacity = 0;
+        // Preload first two images to ensure smooth start
+        const preloadImgs = [];
+        let loadedCount = 0;
+        const toLoad = images.slice(0, 2); 
 
-            setTimeout(() => {
-                currentIndex = (currentIndex + 1) % images.length;
-                imgEl.src = images[currentIndex];
-                imgEl.style.opacity = 1;
-            }, 400); // Wait for fade out to complete before swapping src
+        toLoad.forEach(src => {
+            const img = new Image();
+            img.src = src;
+            img.onload = () => {
+                loadedCount++;
+                if (loadedCount === toLoad.length) {
+                    startSwapping();
+                }
+            };
+            preloadImgs.push(img);
+        });
+
+        // Fallback if load hangs
+        setTimeout(() => { if (loadedCount < toLoad.length) startSwapping(); }, 3000);
+
+        let started = false;
+        function startSwapping() {
+            if (started) return;
+            started = true;
+            setInterval(() => {
+                imgEl.style.opacity = 0;
+                setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    imgEl.src = images[currentIndex];
+                    imgEl.style.opacity = 1;
+                }, 400);
+            }, intervalDelay);
         }
-
-        setInterval(swap, intervalDelay);
     }
 
     // Initialize the swappers for different locations
     setupImageSwapper('hero-image', [
-        "./assets/3dVis.jpeg",
-        "./assets/3dVis2.jpeg",
-        "./assets/3dVis3.jpeg"
+        "./assets/3dVis.webp",
+        "./assets/3dVis2.webp",
+        "./assets/3dVis3.webp"
     ], 3000);
 
     setupImageSwapper('hero-Image1', [
-        "./img/expertise_card/constructionDocMain.png",
-        "./img/expertise_card/constructionDoc.png",
+        "./img/expertise_card/constructionDocMain.webp",
+        "./img/expertise_card/constructionDoc.webp",
     ], 2500);
     setupImageSwapper('hero-Image3', [
-        "./img/interiorDesign/intDes14.jpeg",
-        "./img/interiorDesign/intDes15.jpeg",
-        "./img/interiorDesign/intDes16.jpeg",
-        "./img/interiorDesign/intDes9.jpeg",
+        "./img/interiorDesign/intDes14.webp",
+        "./img/interiorDesign/intDes15.webp",
+        "./img/interiorDesign/intDes16.webp",
+        "./img/interiorDesign/intDes9.webp",
     ], 2000);
 
     // Carousel Logic for Signature Projects
